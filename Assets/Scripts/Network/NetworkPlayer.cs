@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 //fusion
 using Fusion;
 
@@ -9,6 +10,7 @@ public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
     public static NetworkPlayer Local { get; set; }
 
     public Transform playerModel;
+    public TextMeshProUGUI pScore;
 
     void Start()
     {
@@ -28,6 +30,13 @@ public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
             Camera.main.gameObject.SetActive(false);
 
             Debug.Log("Spawned local player");
+
+            //make it easier to tell wich player is which
+            int pname = Random.Range(1, 100);
+            transform.name = $"P_{pname}";
+
+            pScore.text = "Score: 0";
+
         }
         else
         {
@@ -39,12 +48,13 @@ public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
             AudioListener audioListener = GetComponentInChildren<AudioListener>();
             audioListener.enabled = false;
 
+            pScore.enabled = false;
 
             Debug.Log("Spawned remote player");
         }
 
-        //make it easier to tell wich player is which
-        transform.name = $"P_{Object.name}";
+
+        
 
     }
 

@@ -1,6 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
+[System.Serializable]
+public class pRegistry
+{
+    public int score;
+    public TextMeshProUGUI pScore;
+}
 
 public static class Utils
 {
@@ -19,5 +27,5 @@ public static class Utils
             trans.gameObject.layer = layerNumber;
         }
     }
-
 }
+

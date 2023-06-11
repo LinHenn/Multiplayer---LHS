@@ -339,6 +339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
   playerModel: {fileID: 5418653658523908617}
+  pScore: {fileID: 4663296804471800997}
 --- !u!114 &7978557901610274459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,6 +450,9 @@ MonoBehaviour:
   collisionLayers:
     serializedVersion: 2
     m_Bits: 129
+  pScore:
+    score: 0
+    pScore: {fileID: 4663296804471800997}
 --- !u!114 &1301895758987908939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,6 +718,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8044831970269394654, guid: 641703c8591c167488345e1ff9e8eab0, type: 3}
+      propertyPath: m_Name
+      value: pScore
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 641703c8591c167488345e1ff9e8eab0, type: 3}
 --- !u!224 &4096306593065997776 stripped
@@ -721,6 +729,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4336309683476203267, guid: 641703c8591c167488345e1ff9e8eab0, type: 3}
   m_PrefabInstance: {fileID: 357098879753491155}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4663296804471800997 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4919039335113954934, guid: 641703c8591c167488345e1ff9e8eab0, type: 3}
+  m_PrefabInstance: {fileID: 357098879753491155}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &9170766969072749477 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8913099142022175094, guid: 641703c8591c167488345e1ff9e8eab0, type: 3}

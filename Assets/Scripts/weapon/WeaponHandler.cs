@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using Fusion;
 
 public class WeaponHandler : NetworkBehaviour
@@ -15,6 +16,8 @@ public class WeaponHandler : NetworkBehaviour
     float lastTimeFired = 0;
 
     HPHandler hpHandler;
+
+    public pRegistry pScore;
 
     private void Awake()
     {
@@ -60,8 +63,13 @@ public class WeaponHandler : NetworkBehaviour
             Debug.Log($"{Time.time} {transform.name} hit hitbox {hitinfo.Hitbox.transform.root.name}");
 
             if (Object.HasStateAuthority) hitinfo.Hitbox.transform.root.GetComponent<HPHandler>().OnTakeDamage();
-
             isHitOtherPlayer = true;
+
+
+            //scoreCmd.instance.setPoint(gameObject.name);
+            pScore.score += 10;
+            pScore.pScore.text = $"Score: {pScore.score}";
+
 
         }
         else if(hitinfo.Collider != null)
